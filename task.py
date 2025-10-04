@@ -1,8 +1,24 @@
-print("Welcome to the tip calculator!")
-bill = float(input("What was the total bill? $"))
-tip = int(input("What percentage tip would you like to give? 10 12 15? "))
-people = int(input("How many people to split the bill? "))
-total_bill = bill + (bill*tip)/100
-answer = total_bill/people
-final_answer = round(answer,2)
-print(f"Each person should pay: ${final_answer}")
+print("Welcome to Python Pizza Deliveries!")
+size = input("What size pizza do you want? S, M or L: ").lower()
+pepperoni = input("Do you want pepperoni on your pizza? Y or N: ").lower()
+extra_cheese = input("Do you want extra cheese? Y or N: ").lower()
+bill = 0
+if size == "s":
+    bill += 15
+elif size == "m":
+    bill += 20
+elif size == "l":
+    bill += 25
+else:
+    print("You have not typed a correct input.")
+
+if pepperoni == "y":
+    if size == "s":
+        bill+= 2
+    else:
+        bill += 3
+
+if extra_cheese == "y":
+    bill += 1
+
+print(f"Your final bill is: ${bill}.")
